@@ -24,7 +24,7 @@ public class  extends HttpServlet {
     long timestamp = System.currentTimeMillis();
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Location");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
     FullEntity taskEntity =
         Entity.newBuilder(keyFactory.newKey())
             .set("title", title)
