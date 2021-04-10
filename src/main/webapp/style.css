@@ -12,6 +12,11 @@ header {
   justify-content: space-between;
 }
 
+.logoHeader img{
+  width: 10vw;
+  padding-left: 1vw;
+}
+
 .menuMobile {
   display: none;
 }
@@ -41,6 +46,8 @@ header {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
 
 .menuTypography:focus {
@@ -159,7 +166,7 @@ header {
 }
 
 #userLocation {
-  height: 7vh;
+  height: 6vh;
   width: 17vw;
   background-color: white;
   border-radius: 30px;
@@ -300,6 +307,7 @@ footer{
   border-style: none;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .currentLanguage:focus{
@@ -309,7 +317,7 @@ footer{
 .currentLanguage:disabled {
   cursor:initial;
   color:gray;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footerDisclaimer span{
@@ -554,11 +562,11 @@ footer{
   }
 
   .quoteCard {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   .textCard {
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
 
   #buttonJoin {
@@ -571,21 +579,27 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
+  
   .banner {
     height: 100vh;
   }
+
   .blueBubbleContainer{
     display: none;
   }
+
   .vanillaBubbleContainer{
     display: none;
   }
+
   .pinkBubbleContainer {
     display: none;
   }
+
   .greenBubbleContainer {
     display: none;
   }
+
   .lavenderBubbleContainer {
     display: none;
   }
@@ -727,8 +741,9 @@ footer{
   }
 
   #userLocation {
+    height: 50px;
     width: 50vw;
-    font-size: 2vh;
+    font-size: 20px;
   }
 
   .inputSearchText {
@@ -737,8 +752,8 @@ footer{
   }
 
   .searchButton {
-    margin-top: 7vh;
-    margin-left: 46vw;
+    margin-top: 51px;
+    margin-left: 49vw;
   }
 
   .mobileInputLabels {
@@ -751,6 +766,32 @@ footer{
     color: white;
     font-family: "DM Sans", sans-serif;
     margin-top: -1vh;
+  }
+
+  .mobileInputLabels h6 {
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: text;
+    animation-duration: 4s;
+  }
+
+  @keyframes text {
+    0% {
+      color: black;
+      margin-left: -20vw;
+    }
+    50% {
+      letter-spacing: 1vw;
+      margin-left: 3vw;
+    }
+    90% {
+      letter-spacing: 0vw;
+      margin-left: 0vw;
+    }
+    100% {
+      letter-spacing: 0vw;
+      margin-left: 0vw;
+    }
   }
   
   .scrollLabelMobile {
