@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Nuestro proyecto</title>
+    <title>tidings - ¡Manténte al tanto!</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   <body>
     <header>
       <div class="logoHeader">
-        
+        <img src="./assets/1.png" alt="tidings">
       </div>
 
       <nav class="menuMobile" role="navigation">
@@ -25,7 +25,7 @@
           <ul id="foldingMenu">
             <a href=""><li>SOBRE NOSOTROS</li></a>
             <a href=""><li>ENCUENTRA INFORMACIÓN CERCANA</li></a>
-            <a href=""><li>READ ME IN ENGLISH</li></a>
+            <a href="index.html"><li>READ ME IN ENGLISH</li></a>
             <a href=""><li>ÚNETE AHORA</li></a>
           </ul>
         </div>
@@ -37,7 +37,7 @@
         <button class="menuTypography">SOBRE NOSOTROS</button>
         <button class="menuTypography">ENCUENTRA INFORMACIÓN CERCANA</button>
         <button class="menuTypography" onclick="smoothScroll(document.getElementById('learnMoreSection'))">APRENDE MÁS</button>
-        <button class="menuTypography">READ ME IN ENGLISH</button>
+        <a href="index.html"class="menuTypography">READ ME IN ENGLISH</a>
         <button class="whiteButton">ÚNETE AHORA</button>
       </nav>
 
@@ -139,7 +139,7 @@
       <button class="whiteButton" id="buttonJoin">¡COMIENZA AHORA!</button>
       <p class="phraseSecLang">Not your language?</p>
       <div class="chooseLang">
-        <p class="phraseSecLang"><span><button class="currentLanguage">en</button></span> | <span><button class="currentLanguage" disabled="disabled">es</button></span></p>
+        <p class="phraseSecLang"><span><a href="index.html" class="currentLanguage">en</a></span> | <span><button class="currentLanguage" disabled="disabled">es</button></span></p>
       </div>
       <p class="footerDisclaimer">Coded with ☕,🍪, and 💕 by ✨<span class="spsers">Team 20 Google SPSers</span>✨</p>
     </footer>

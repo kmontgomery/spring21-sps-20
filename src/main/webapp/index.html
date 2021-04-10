@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Our Project</title>
+    <title>tidings - Keeping up to date!</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -13,7 +15,7 @@
   <body>
     <header>
       <div class="logoHeader">
-        
+        <img src="./assets/1.png" alt="tidings">
       </div>
 
       <nav class="menuMobile" role="navigation">
@@ -25,7 +27,7 @@
           <ul id="foldingMenu">
             <a href=""><li>ABOUT US</li></a>
             <a href=""><li>FIND INFO BY LOCATION</li></a>
-            <a href=""><li>LÉELO EN TU IDIOMA</li></a>
+            <a href="index-es-version.html"><li>LÉELO EN TU IDIOMA</li></a>
             <a href=""><li>JOIN NOW</li></a>
           </ul>
         </div>
@@ -33,9 +35,9 @@
 
       <nav class="menuHeader" id="menuHeader">
         <button class="menuTypography">ABOUT US</button>
-        <button class="menuTypography">FIND INFO BY LOCATION</button>
+        <button class="menuTypography"onclick="smoothScroll(document.getElementById('inputLocation'))">FIND INFO BY LOCATION</button>
         <button class="menuTypography" onclick="smoothScroll(document.getElementById('learnMoreSection'))">LEARN MORE</button>
-        <button class="menuTypography">LÉELO EN TU IDIOMA</button>
+        <a href="index-es-version.html" class="menuTypography">LÉELO EN TU IDIOMA</a>
         <button class="whiteButton">JOIN NOW</button>
       </nav>
 
@@ -52,7 +54,7 @@
         <p class="bannerSmallText">The right info, in the right place.</p>
         <p class="bannerSmallText">It’s all here.</p>
       </div>
-      <div class="inputLocation">
+      <div class="inputLocation" id="inputLocation">
         <label class="inputSearchText">Enter your location below: </label>
         <input type="text" name="userLocation" id="userLocation">
         <button class="searchButton"><i class="fas fa-search-location"></i></button>
@@ -142,7 +144,7 @@
       <button class="whiteButton" id="buttonJoin">START NOW!</button>
       <p class="phraseSecLang">¿Este no es tu idioma?</p>
       <div class="chooseLang">
-        <p class="phraseSecLang"><span><button class="currentLanguage" disabled="disabled">en</button></span> | <span><button class="currentLanguage">es</button></span></p>
+        <p class="phraseSecLang"><span><button class="currentLanguage" disabled="disabled">en</button></span> | <span><a href="index-es-version.html" class="currentLanguage">es</a></span></p>
       </div>
       <p class="footerDisclaimer">Coded with ☕,🍪, and 💕 by ✨<span class="spsers">Team 20 Google SPSers</span>✨</p>
     </footer>
