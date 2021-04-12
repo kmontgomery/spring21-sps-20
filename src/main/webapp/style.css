@@ -735,14 +735,11 @@ footer{
   color: white;
 }
 
-.tool:nth-child(2) {
+.tool:nth-child(n) {
   border-left: transparent solid 5px;
   border-top: transparent solid 5px;
-  border-right: transparent solid 5px;
-}
-
-.tool:nth-child(3) {
   border-bottom: transparent solid 5px;
+  border-right: transparent solid 5px;
 }
 
 @media only screen and (max-width: 1370px) {
@@ -1180,7 +1177,16 @@ footer{
   }
 
   .tool:hover {
-    display: none;
+    color: white;
+    background-color: #000000;
+    border: 5px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left,#C40F0F, #FF8A00, #FFD600, #128100, #0E30A9, #6B016E, #FFA0EA);
+  }
+  
+  .tool:hover h1{
+    color: white;
   }
 
   .tool:nth-child(n) {
