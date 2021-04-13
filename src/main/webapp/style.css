@@ -13,7 +13,7 @@ header {
 }
 
 .logoHeader img{
-  width: 10vw;
+  height: 8vh;
   padding-left: 1vw;
 }
 
@@ -31,11 +31,19 @@ header {
   width: 40%;
 }
 
-.menuHeader {
+.menuHeaderEn {
   width: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menuHeaderEs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -523,6 +531,217 @@ footer{
   display: none;
 }
 
+.bannerAboutUs {
+  color: #ffffff;
+}
+
+.infoAboutUs {
+  display: flex;
+  flex-direction: row;
+}
+
+.bannerAboutUs img {
+  height: 100vh;
+}
+
+.bannerAboutUs span {
+  background-image: linear-gradient(
+   -45deg, #C40F0F, #FF8A00, #FFD600, #128100, #0E30A9, #6B016E, #FFA0EA);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bannerAboutUs h1{
+  font-family: "Poppins", sans-serif;
+  font-size: 4vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  text-align: left;
+}
+
+.bannerAboutUs p{
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5vw;
+  padding-left: 5vw;
+  text-align: left;
+}
+
+.infoAboutUs div button {
+  font-family: "Anonymous Pro", monospace;
+  text-align: left;
+  margin-top: 10vh;
+  margin-left: 5vw;
+}
+
+.teamMembers {
+  margin-top: 10vh;
+  margin-bottom: 60vh;
+  text-align: center;
+  height: 85vh;
+}
+
+.teamMembers button {
+  margin-top: 20vh;
+  font-family: "Anonymous Pro", monospace;
+}
+
+.teamMembers .cards {
+  padding-top: 4vh;
+}
+
+.team {
+  width: 29vw;
+  height: 70vh;
+}
+
+.teamMembers .card__side.card__side--front.card__side--front .imageTeam  {
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.team:nth-child(1) .imageTeam {
+  height: 60vh;
+  background-image: url(https://www.w3schools.com/w3css/img_avatar2.png);
+}
+
+.team:nth-child(2) .imageTeam {
+  height: 60vh;
+  background-image: url(https://www.w3schools.com/w3css/img_avatar2.png);
+}
+
+.team:nth-child(3) .imageTeam {
+  height: 60vh;
+  background-image: url(https://www.w3schools.com/w3css/img_avatar2.png);
+}
+
+.teamMembers  h1 {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 4vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.personalInfo h4 {
+  font-family: "Anonymous Pro", monospace;
+  color: white;
+  font-size: 1.2vw;
+  text-align: left;
+}
+
+.personalInfo span {
+  background-image: linear-gradient(
+   -45deg, #C40F0F, #FF8A00, #FFD600, #128100, #0E30A9, #6B016E, #FFA0EA);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2vw;
+}
+
+.personalInfo p {
+  padding-left: 0px;
+  font-size: 1.8vh;
+  line-height: 1vh;
+  text-align: left;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.personalInfo p span {
+  font-size: 1.2vw;
+}
+
+.teamMembers .cards .card .card__side--front {
+  background-color: transparent;
+  border-radius: 0px;
+  height: 80vh;
+}
+
+.teamMembers .cards .card .card__side--back {
+  background-color: black;
+  background-image: none;
+  border-radius: 0px;
+  text-align: center;
+  justify-content: center;
+  height: 80vh
+}
+
+.teamMembers .cards .card .card__side--front-2 {
+  margin-top: 0px;
+}
+
+.teamMembers .cards .card .card__side--back-2 {
+  margin-top: 0px;
+}
+
+.toolsUsed h1 {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 4vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  text-align: left;
+}
+
+
+.toolsUsed .tools{
+  margin-top: 10vh;
+  margin-bottom: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-around;
+  height: 75vh;
+}
+
+.tool {
+  width: 20%;
+  height: 30vh;
+  background-color: white;
+  color: #000000;
+}
+
+.tool h2{
+  font-family: "Anonymous Pro", monospace;
+  font-size: 4vh;
+  text-align: center;
+}
+
+.tool h1{
+  text-align: center;
+  color: #000000;
+}
+
+.tool:hover {
+  color: white;
+  background-color: #000000;
+  border: 5px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left,#C40F0F, #FF8A00, #FFD600, #128100, #0E30A9, #6B016E, #FFA0EA);
+}
+
+.tool:hover h1{
+  color: white;
+}
+
+.tool:nth-child(n) {
+  border-left: transparent solid 5px;
+  border-top: transparent solid 5px;
+  border-bottom: transparent solid 5px;
+  border-right: transparent solid 5px;
+}
+
 @media only screen and (max-width: 1370px) {
   header {
     font-size: 0.8em;
@@ -824,8 +1043,7 @@ footer{
     height: 80vh;
     padding-left: 5vw;
     padding-right: 5vw;
-    transform: none;
-    
+    transform: none; 
   }
 
   .card__side--front-2 {
@@ -857,5 +1075,121 @@ footer{
 
   footer {
     padding-top: 5vh;
+  }
+
+  .bannerAboutUs img {
+    display: none;
+  }
+
+  .menuHeaderEs .whiteButton {
+    display: none;
+  }
+
+  .menuHeaderEn .whiteButton {
+    display: none;
+  }
+
+  .bannerAboutUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  .bannerAboutUs h1 {
+    font-size: 12vw;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .bannerAboutUs p {
+    padding-left: 0px;
+    font-size: 4.5vw;
+  }
+
+  .infoAboutUs .menuTypography {
+    display: contents;
+    padding-top: 15vh;
+  }
+
+  .teamMembers .cards {
+    overflow-x: scroll;
+    display: flex;
+    margin-left: 2vw;
+    margin-right: 4vw;
+  }
+
+  .teamMembers .card__side.card__side--front.card__side--front .imageTeam {
+    width: 75vw;
+  }
+
+  .teamMembers .card__side.card__side--front.card__side--front .personalInfo {
+    width: 75vw;
+  }
+
+  .teamMembers .card__side.card__side--front.card__side--front .personalInfo h4{
+    font-size: 5vw;
+  }
+
+  .teamMembers .card__side.card__side--front.card__side--front .personalInfo span{
+    font-size: 5vw;
+  }
+
+  .teamMembers {
+    margin-bottom: 10vh;
+  }
+
+  .teamMembers h1{
+    font-size: 9vw;
+  }
+
+  .teamMembers .menuTypography {
+    display: contents;
+    margin-bottom: 35vh;
+  }
+
+  .toolsUsed {
+    margin-top: 20vh;
+  }
+
+  .toolsUsed h1 {
+    font-size: 9vw;
+  }
+
+  .toolsUsed .tools {
+    margin-top: 5vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: fit-content;
+  }
+
+  .toolsUsed .tools .tool {
+    height: 20vh;
+    width: 40vw;
+    border-style: none;
+    margin-bottom: 3vh;
+  }
+
+  .toolsUsed .tools .tool h2{
+    font-size: 100%;
+  }
+
+  .tool:hover {
+    color: white;
+    background-color: #000000;
+    border: 5px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left,#C40F0F, #FF8A00, #FFD600, #128100, #0E30A9, #6B016E, #FFA0EA);
+  }
+  
+  .tool:hover h1{
+    color: white;
+  }
+
+  .tool:nth-child(n) {
+    border: none;
   }
 }

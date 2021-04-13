@@ -34,3 +34,9 @@ window.smoothScroll = function(target) {
   
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
+
+window.smoothScrollOtherPage = function(targetContainer, targetURLstring) {
+    let thisURL = new URL('http://spring21-sps-20.appspot.com');
+    let targetURL = new URL(targetURLstring, thisURL);
+    window.location.href = `${targetURL}#${targetContainer}`;
+}
