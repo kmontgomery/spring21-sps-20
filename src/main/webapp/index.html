@@ -54,6 +54,9 @@
         <p class="bannerSmallText">The right info, in the right place.</p>
         <p class="bannerSmallText">It’s all here.</p>
       </div>
+
+      <body onload="loadTasks()"></body>
+
       <div class="inputLocation" id="inputLocation">
         <label class="inputSearchText">Enter your location below: </label>
         <input type="text" name="userLocation" id="userLocation">
@@ -149,11 +152,11 @@
       <p class="footerDisclaimer">Coded with ☕,🍪, and 💕 by ✨<span class="spsers">Team 20 Google SPSers</span>✨</p>
     </footer>
 
-    <body onload="loadTasks()">
     <form method="POST" action="/new-task">
       <input type="text" name="title" />
       <br/>
       <button>Submit</button>
     </form>
+    <ul id="task-list"></ul>
   </body>
 </html>
