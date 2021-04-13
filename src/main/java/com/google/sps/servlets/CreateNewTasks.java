@@ -14,7 +14,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
 /** Servlet that takes user information and stores it */
-@WebServlet("/news-and-resources")
+@WebServlet("/new-task")
 public class  extends HttpServlet {
 
   @Override
@@ -24,6 +24,7 @@ public class  extends HttpServlet {
     long timestamp = System.currentTimeMillis();
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    // Create a KeyFactory with a 'kind' of Task and store it in the keyFactory variable
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
     FullEntity taskEntity =
         Entity.newBuilder(keyFactory.newKey())
