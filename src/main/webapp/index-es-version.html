@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>tidings - ¡Manténte al tanto!</title>
+    <title>ResourceResponse - ¡Manténte al tanto!</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   <body>
     <header>
       <div class="logoHeader">
-        <img src="./assets/1.png" alt="tidings">
+        <a href="index-es-version.html"><img src="./assets/2.png" alt="ResourceResponse"></a>
       </div>
 
       <nav class="menuMobile" role="navigation">
@@ -23,7 +23,7 @@
           <span></span>
           <span></span>
           <ul id="foldingMenu">
-            <a href=""><li>SOBRE NOSOTROS</li></a>
+            <a href="sobre-nosotros.html"><li>SOBRE NOSOTROS</li></a>
             <a href=""><li>ENCUENTRA INFORMACIÓN CERCANA</li></a>
             <a href="index.html"><li>READ ME IN ENGLISH</li></a>
             <a href=""><li>ÚNETE AHORA</li></a>
@@ -32,10 +32,10 @@
       </nav>
 
 
-      <nav class="menuHeader" id="menuHeader">
+      <nav class="menuHeaderEs" id="menuHeader">
         </input>
-        <button class="menuTypography">SOBRE NOSOTROS</button>
-        <button class="menuTypography">ENCUENTRA INFORMACIÓN CERCANA</button>
+        <a href="sobre-nosotros.html" class="menuTypography">SOBRE NOSOTROS</a>
+        <button class="menuTypography" onclick="smoothScroll(document.getElementById('inputLocation'))">ENCUENTRA INFORMACIÓN CERCANA</button>
         <button class="menuTypography" onclick="smoothScroll(document.getElementById('learnMoreSection'))">APRENDE MÁS</button>
         <a href="index.html"class="menuTypography">READ ME IN ENGLISH</a>
         <button class="whiteButton">ÚNETE AHORA</button>
@@ -52,10 +52,12 @@
         <p class="bannerSmallText">La información correcta, en el lugar correcto.</p>
         <p class="bannerSmallText">Todo está aquí.</p>
       </div>
-      <div class="inputLocation">
-        <label class="inputSearchText">Introduce tu ubicación: </label>
-        <input type="text" name="userLocation" id="userLocation">
-        <button class="searchButton"><i class="fas fa-search-location"></i></button>
+      <div class="inputLocation" id="inputLocation">
+        <form action = "/resource" method = "POST">
+            <label class="inputSearchText">Introduce tu ubicación: </label>
+            <input type="text" name="userLocation" id="userLocation">
+            <button class="searchButton"><i class="fas fa-search-location"></i></button>
+        </form>
       </div>
       <div class="mobileInputLabels">
         <h6>MANTÉNTE INFORMADO</h6>
