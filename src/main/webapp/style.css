@@ -21,6 +21,12 @@ header {
   display: none;
 }
 
+.searchResultsContainer{
+  background-color: white;
+  border-color: rebeccapurple;
+  height: 50vh;
+}
+
 .mapsContainer {
   background-color: white;
   border-color: rebeccapurple;
