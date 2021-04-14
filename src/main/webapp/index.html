@@ -54,13 +54,13 @@
         <p class="bannerSmallText">The right info, in the right place.</p>
         <p class="bannerSmallText">It’s all here.</p>
       </div>
-
-      <body onload="loadTasks()"></body>
-
+      
       <div class="inputLocation" id="inputLocation">
-        <label class="inputSearchText">Enter your location below: </label>
-        <input type="text" name="userLocation" id="userLocation">
-        <button class="searchButton"><i class="fas fa-search-location"></i></button>
+        <form action = "/resource" method = "POST">
+            <label class="inputSearchText">Enter your location below: </label>
+            <input type="text" name="userLocation" id="userLocation">
+            <button class="searchButton"><i class="fas fa-search-location"></i></button>
+        </form>
       </div>
       <div class="mobileInputLabels">
         <h6>KEEP TOGETHER</h6>
