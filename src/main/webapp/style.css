@@ -160,6 +160,11 @@ header {
   margin-bottom: 2%;
 }
 
+form {
+  display:flex;
+  flex-direction: column;
+}
+
 .inputLocation{
   display: flex;
   flex-direction: column;
