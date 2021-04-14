@@ -53,9 +53,11 @@
         <p class="bannerSmallText">Todo está aquí.</p>
       </div>
       <div class="inputLocation" id="inputLocation">
-        <label class="inputSearchText">Introduce tu ubicación: </label>
-        <input type="text" name="userLocation" id="userLocation">
-        <button class="searchButton"><i class="fas fa-search-location"></i></button>
+        <form action = "/resource" method = "POST">
+            <label class="inputSearchText">Introduce tu ubicación: </label>
+            <input type="text" name="userLocation" id="userLocation">
+            <button class="searchButton"><i class="fas fa-search-location"></i></button>
+        </form>
       </div>
       <div class="mobileInputLabels">
         <h6>MANTÉNTE INFORMADO</h6>
