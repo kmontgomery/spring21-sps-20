@@ -43,8 +43,11 @@ public class ResourceServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String title = request.getParameter("location");
+        System.out.println(request);
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
         KeyFactory keyFactory = datastore.newKeyFactory().setKind("Location");
+        System.out.println(keyFactory.newKey());
+        System.out.println(title);
         FullEntity locationEntity = Entity.newBuilder(keyFactory.newKey())
             .set("location", title)
             .set("timestamp", System.currentTimeMillis())
