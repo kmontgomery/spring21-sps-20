@@ -12,6 +12,48 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/** Fetches tasks from the server and adds them to the DOM */
+function loadResource() {
+    fetch('/response').then(response => response.json()).then((resource) => {
+      const taskListElement = document.getElementById('resource-list');
+      tasks.forEach((resource) => {
+        taskListElement.appendChild(createTaskElement(resource));
+      })
+    });
+  }
+
+/**Fetches resources from the server */
+async function getResource() {
+    const responseFromServer = await fetch("/resource");
+    const textFromResponse = await responseFromServer.text();
+
+    const resourceContainer = document.getElementById('searchResultsContainer');
+    resourceContainer.innerText = textFromResponse;
+
+}
+
+/** Creates an element that represents a task, including its delete button. */
+function createTaskElement(task) {
+    const taskElement = document.createElement('li');
+    taskElement.className = 'task';
+  
+    const titleElement = document.createElement('span');
+    titleElement.innerText = task.title;
+  
+    const deleteButtonElement = document.createElement('button');
+    deleteButtonElement.innerText = 'Delete';
+    deleteButtonElement.addEventListener('click', () => {
+      deleteTask(task);
+  
+      // Remove the task from the DOM.
+      taskElement.remove();
+    });
+  
+    taskElement.appendChild(titleElement);
+    taskElement.appendChild(deleteButtonElement);
+    return taskElement;
+}  
+
 window.smoothScroll = function(target) {
   let scrollContainer = target;
   do { 
@@ -33,4 +75,10 @@ window.smoothScroll = function(target) {
   }
   
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+
+window.smoothScrollOtherPage = function(targetContainer, targetURLstring) {
+    let thisURL = new URL('http://spring21-sps-20.appspot.com');
+    let targetURL = new URL(targetURLstring, thisURL);
+    window.location.href = `${targetURL}#${targetContainer}`;
 }
