@@ -56,11 +56,10 @@
       </div>
       
       <div class="inputLocation" id="inputLocation">
-        <body onload="loadTasks()"></body>
-        <form action = "/resource" method = "POST">
+        <form action = "/list-news" method = "GET"></form>
             <label class="inputSearchText">Enter your location below: </label>
             <input type="text" name="userLocation" id="userLocation">
-            <button class="searchButton"><i class="fas fa-search-location"></i></button>
+            <button class="searchButton" onclick="loadResources();"><i class="fas fa-search-location"></i></button>
         </form>
       </div>
       <div class="mobileInputLabels">
@@ -90,10 +89,10 @@
       </div>
     </section>
 
-    <section class="searchResultsContainer" id="searchResultsContainer">
-      <p>Here we can display the results of our queries!</p>
-      <ul id="resource-list" onload="getResource();">
-      </ul>
+    <section id="searchResultsContainer">
+        <div class="tools">
+            <ul class="toolsUsed" id="very-very-unique-news"></ul>
+        </div>
     </section>
 
     <section class="mapsContainer">
