@@ -56,6 +56,7 @@
       </div>
       
       <div class="inputLocation" id="inputLocation">
+        <body onload="loadTasks()"></body>
         <form action = "/resource" method = "POST">
             <label class="inputSearchText">Enter your location below: </label>
             <input type="text" name="userLocation" id="userLocation">
@@ -91,6 +92,9 @@
 
     <section class="searchResultsContainer" id="searchResultsContainer">
       <p>Here we can display the results of our queries!</p>
+      <ul id="resource-list">
+          <li onload="getResource()"></li>
+      <ul></ul>
     </section>
 
     <section class="mapsContainer">
@@ -154,6 +158,14 @@
         <p class="phraseSecLang"><span><button class="currentLanguage" disabled="disabled">en</button></span> | <span><a href="index-es-version.html" class="currentLanguage">es</a></span></p>
       </div>
       <p class="footerDisclaimer">Coded with ☕,🍪, and 💕 by ✨<span class="spsers">Team 20 Google SPSers</span>✨</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    </footer>
+=======
+>>>>>>> b1f4d086590cedad8ceab76225d5d073dae8b9f0
+    <ul id="task-list"></ul>
+=======
+>>>>>>> 507ff3bdd6065a2aa83f59fa518cbece546ee9a3
     </footer>
   </body>
 </html>

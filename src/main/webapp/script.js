@@ -13,14 +13,24 @@
 // limitations under the License.
 
 /** Fetches tasks from the server and adds them to the DOM */
-function loadTasks() {
-    fetch('/list-tasks').then(response => response.json()).then((tasks) => {
-      const taskListElement = document.getElementById('task-list');
-      tasks.forEach((task) => {
-        taskListElement.appendChild(createTaskElement(task));
+function loadResource() {
+    fetch('/response').then(response => response.json()).then((resource) => {
+      const taskListElement = document.getElementById('resource-list');
+      tasks.forEach((resource) => {
+        taskListElement.appendChild(createTaskElement(resource));
       })
     });
   }
+
+/**Fetches resources from the server */
+async function getResource() {
+    const responseFromServer = await fetch("/resource");
+    const textFromResponse = await responseFromServer.text();
+
+    const resourceContainer = document.getElementById('searchResultsContainer');
+    resourceContainer.innerText = textFromResponse;
+
+}
 
 /** Creates an element that represents a task, including its delete button. */
 function createTaskElement(task) {
