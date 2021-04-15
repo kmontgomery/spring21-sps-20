@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.sps.data.Location;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/resource")
 public class ResourceServlet extends HttpServlet {
@@ -31,10 +33,16 @@ public class ResourceServlet extends HttpServlet {
                 .setOrderBy(OrderBy.desc("timestamp")).build();
         final QueryResults<Entity> results = datastore.run(query);
 
+        List<String> resources = new ArrayList<>();
+        resources.add("https://www.nytimes.com/2021/03/18/nyregion/asian-hate-crimes.html");
+        resources.add("https://www.plannedparenthood.org/");
+        resources.add("https://theconversation.com/african-american-teens-face-mental-health-crisis-but-are-less-likely-than-whites-to-get-treatment-140697");
         while (results.hasNext()) {
             final Entity entity = results.next();
             final String resource = entity.getString("title");
-            response.getWriter().println("<li>" + resource + "</li>");
+            for(String link : resources) {
+                response.getWriter().println("<li>" + link + "</li>");
+            }
             
         }
     }
