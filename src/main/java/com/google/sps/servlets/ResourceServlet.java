@@ -16,35 +16,45 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.sps.data.Location;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import com.google.gson.Gson;
 
 @WebServlet("/resource")
 public class ResourceServlet extends HttpServlet {
+    ArrayList<String> resources = new ArrayList<>(Arrays.asList("https://www.nytimes.com/2021/03/18/nyregion/asian-hate-crimes.html", 
+        "https://www.plannedparenthood.org/", "https://theconversation.com/african-american-teens-face-mental-health-crisis-but-are-less-likely-than-whites-to-get-treatment-140697 "));
+    String json = convertToJsonUsingGson(resources);
     @Override
     public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
         response.setContentType("text/html;");
         response.getWriter().println("<h1>News and Resources from Your Area!</h1>");
-        response.getWriter().println("https://www.nytimes.com/2021/03/18/nyregion/asian-hate-crimes.html");
-        response.getWriter().println("https://theconversation.com/african-american-teens-face-mental-health-crisis-but-are-less-likely-than-whites-to-get-treatment-140697");
-        response.getWriter().println("https://www.plannedparenthood.org/");
+        response.getWriter().println(json);
 
         final Query<Entity> query = Query.newEntityQueryBuilder().setKind("Resource")
                 .setOrderBy(OrderBy.desc("timestamp")).build();
         final QueryResults<Entity> results = datastore.run(query);
 
-        List<String> resources = new ArrayList<>();
-        resources.add("https://www.nytimes.com/2021/03/18/nyregion/asian-hate-crimes.html");
-        resources.add("https://www.plannedparenthood.org/");
-        resources.add("https://theconversation.com/african-american-teens-face-mental-health-crisis-but-are-less-likely-than-whites-to-get-treatment-140697");
+        //List<String> resources = new ArrayList<>();
+        //resources.add("https://www.nytimes.com/2021/03/18/nyregion/asian-hate-crimes.html");
+        //resources.add("https://www.plannedparenthood.org/");
+        //resources.add("https://theconversation.com/african-american-teens-face-mental-health-crisis-but-are-less-likely-than-whites-to-get-treatment-140697");
         while (results.hasNext()) {
             final Entity entity = results.next();
             final String resource = entity.getString("title");
-            for(String link : resources) {
-                response.getWriter().println("<li>" + link + "</li>");
-            }
+            // for(String link : resources) {
+                //response.getWriter().println("<li>" + link + "</li>");
+            //}
             
         }
+        //String json = converToJsonUsingGson(resources);
+        //response.getWriter().println(json);
+    }
+
+    public String convertToJsonUsingGson(ArrayList<String> messageList2) {
+        Gson gson = new Gson();
+        String json = gson.toJson(messageList2);
+        return json;
     }
 
     @Override
