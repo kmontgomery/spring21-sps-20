@@ -20,13 +20,12 @@ import com.google.sps.data.Location;
 public class ResourceServlet extends HttpServlet {
     @Override
     public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
         response.setContentType("text/html;");
         response.getWriter().println("<h1>News and Resources from Your Area!</h1>");
         response.getWriter().println("https://www.nytimes.com/2021/03/18/nyregion/asian-hate-crimes.html");
         response.getWriter().println("https://theconversation.com/african-american-teens-face-mental-health-crisis-but-are-less-likely-than-whites-to-get-treatment-140697");
         response.getWriter().println("https://www.plannedparenthood.org/");
-
-        final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
         final Query<Entity> query = Query.newEntityQueryBuilder().setKind("Resource")
                 .setOrderBy(OrderBy.desc("timestamp")).build();
@@ -42,7 +41,7 @@ public class ResourceServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String title = request.getParameter("location");
+        String title = request.getParameter("userLocation");
         System.out.println(request);
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
         KeyFactory keyFactory = datastore.newKeyFactory().setKind("Location");
@@ -53,7 +52,6 @@ public class ResourceServlet extends HttpServlet {
             .set("timestamp", System.currentTimeMillis())
             .build();
         System.out.println(locationEntity);
-        datastore.put(locationEntity);
 
         response.sendRedirect("/index.html");
     }
