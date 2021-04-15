@@ -13,46 +13,33 @@
 // limitations under the License.
 
 /** Fetches tasks from the server and adds them to the DOM */
-function loadResource() {
-    fetch('/response').then(response => response.json()).then((resource) => {
-      const taskListElement = document.getElementById('resource-list');
-      tasks.forEach((resource) => {
-        taskListElement.appendChild(createTaskElement(resource));
+function loadResources() {
+    fetch('/list-news').then(response => response.json()).then((resources) => {
+      const resourceListElement = document.getElementById('very-very-unique-news');
+      resources.forEach((resource) => {
+        resourceListElement.appendChild(createResourceElement(resource));
       })
     });
-  }
-
-/**Fetches resources from the server */
-async function getResource() {
-    const responseFromServer = await fetch("/resource");
-    const textFromResponse = await responseFromServer.text();
-
-    const resourceContainer = document.getElementById('searchResultsContainer');
-    resourceContainer.innerText = textFromResponse;
-
 }
 
-/** Creates an element that represents a task, including its delete button. */
-function createTaskElement(task) {
-    const taskElement = document.createElement('li');
-    taskElement.className = 'task';
-  
-    const titleElement = document.createElement('span');
-    titleElement.innerText = task.title;
-  
-    const deleteButtonElement = document.createElement('button');
-    deleteButtonElement.innerText = 'Delete';
-    deleteButtonElement.addEventListener('click', () => {
-      deleteTask(task);
-  
-      // Remove the task from the DOM.
-      taskElement.remove();
-    });
-  
-    taskElement.appendChild(titleElement);
-    taskElement.appendChild(deleteButtonElement);
-    return taskElement;
-}  
+function createResourceElement(resource) {
+  const resourceElement = document.createElement('li');
+  resourceElement.className = 'tool';
+
+  const titleElement = document.createElement('h6');
+  titleElement.innerText = resource.newsTitle;
+
+  const placeElement = document.createElement('h6');
+  placeElement.innerText = resource.newsPlace;
+
+  const linkElement = document.createElement('h6');
+  linkElement.innerText = resource.newsLink;
+
+  resourceElement.append(titleElement);
+  resourceElement.append(placeElement);
+  resourceElement.append(linkElement);
+  return resourceElement;
+}
 
 window.smoothScroll = function(target) {
   let scrollContainer = target;
