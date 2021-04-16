@@ -4,6 +4,20 @@ body {
   background-color: black;
 }
 
+#very-very-unique-news {
+  list-style-type:none;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1.7vw;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#very-very-unique-news .tool {
+    margin-top: 5vh;
+}
+
 header {
   padding: 1.2em;
   font-family: "DM Sans", sans-serif;
